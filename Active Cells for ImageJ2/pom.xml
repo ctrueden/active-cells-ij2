@@ -32,16 +32,6 @@
 			<artifactId>imglib2</artifactId>
 			<version>${imglib2.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>${imagej.groupId}</groupId>
-			<artifactId>ij</artifactId>
-			<version>${imagej1.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>${imagej.groupId}</groupId>
-			<artifactId>ij-data</artifactId>
-			<version>${imagej.version}</version>
-		</dependency>
   </dependencies>
 
 	<!-- NB: for project parent -->
