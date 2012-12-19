@@ -1,37 +1,21 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
 		<groupId>org.scijava</groupId>
 		<artifactId>pom-scijava</artifactId>
-		<version>1.22</version>
+		<version>1.26</version>
 	</parent>
 
-  <groupId>ch.epfl.big</groupId>
-  <artifactId>ij-esnake</artifactId>
-  <version>1.0.0</version>
-  <packaging>jar</packaging>
+	<groupId>ch.epfl.big</groupId>
+	<artifactId>ij-esnake</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
 
-  <name>ij-esnake</name>
-  <url>http://maven.apache.org</url>
+	<name>ij-esnake</name>
+	<url>https://github.com/RicardDelgado/active-cells-ij2</url>
 
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  </properties>
-
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-		<dependency>
-			<groupId>${imglib2.groupId}</groupId>
-			<artifactId>imglib2</artifactId>
-			<version>${imglib2.version}</version>
-		</dependency>
+	<dependencies>
 		<dependency>
 			<groupId>${imagej.groupId}</groupId>
 			<artifactId>ij</artifactId>
@@ -39,10 +23,38 @@
 		</dependency>
 		<dependency>
 			<groupId>${imagej.groupId}</groupId>
+			<artifactId>ij-core</artifactId>
+			<version>${imagej.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${imagej.groupId}</groupId>
 			<artifactId>ij-data</artifactId>
 			<version>${imagej.version}</version>
 		</dependency>
-  </dependencies>
+		<dependency>
+			<groupId>${imglib2.groupId}</groupId>
+			<artifactId>imglib2</artifactId>
+			<version>${imglib2.version}</version>
+		</dependency>
+
+		<!-- NB: This is really bad practice (makes this artifact unusable
+				 as a dependency downstream), but necessary until big.jar
+				 has been deployed to the ImageJ Maven repository. -->
+		<dependency>
+			<groupId>ch.epfl.big</groupId>
+			<artifactId>big</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/lib/big.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 
 	<!-- NB: for project parent -->
 	<repositories>
