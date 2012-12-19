@@ -15,10 +15,6 @@
 	<name>ij-esnake</name>
 	<url>https://github.com/RicardDelgado/active-cells-ij2</url>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>${imagej.groupId}</groupId>
