@@ -20,18 +20,45 @@
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
+		<dependency>
+			<groupId>${imagej.groupId}</groupId>
+			<artifactId>ij</artifactId>
+			<version>${imagej1.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${imagej.groupId}</groupId>
+			<artifactId>ij-core</artifactId>
+			<version>${imagej.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${imagej.groupId}</groupId>
+			<artifactId>ij-data</artifactId>
+			<version>${imagej.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>${imglib2.groupId}</groupId>
 			<artifactId>imglib2</artifactId>
 			<version>${imglib2.version}</version>
 		</dependency>
-  </dependencies>
+
+		<!-- NB: This is really bad practice (makes this artifact unusable
+				 as a dependency downstream), but necessary until big.jar
+				 has been deployed to the ImageJ Maven repository. -->
+		<dependency>
+			<groupId>ch.epfl.big</groupId>
+			<artifactId>big</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/lib/big.jar</systemPath>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 
 	<!-- NB: for project parent -->
 	<repositories>
